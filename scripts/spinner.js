@@ -6,7 +6,13 @@ $(function() {
     var circle = paper.circle(420, 420, 400).attr({
 	fill: "white",
 	stroke: "red",
-	"stroke-width": 20
     });
+
+    // Quadrant lines
+    var xaxis = paper.path("M420 0L420 840").attr({
+	stroke: "black",
+	"stroke-width": 3
+    });
+    var yaxis = xaxis.clone().rotate(90);
     
 })
