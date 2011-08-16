@@ -17,12 +17,12 @@ $(function() {
     //Spot rotation
     function spot_rotator(set){
 	i = 0
-	while (i<180) {
+	while (i<360) {
 	    set.push(
 		spot.clone().rotate(i)
 	    );
-            var x = 420 + Math.cos(Raphael.rad(i)) * 360;
-            var y = 420 + Math.sin(Raphael.rad(i)) * 360;
+            var x = 420 + Math.cos(Raphael.rad(i)) * 340;
+            var y = 420 + Math.sin(Raphael.rad(i)) * 340;
             set.push(paper.circle(x, y, 60))
 	    i += 22.5;
 	}
