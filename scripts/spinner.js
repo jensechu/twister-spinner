@@ -17,19 +17,23 @@ $(function() {
     //Spot rotation
     function spot_rotator(set){
 	i = 0
-	while (i<90) {
+	while (i<180) {
 	    set.push(
 		spot.clone().rotate(i)
 	    );
+            var x = 420 + Math.cos(Raphael.rad(i)) * 360;
+            var y = 420 + Math.sin(Raphael.rad(i)) * 360;
+            set.push(paper.circle(x, y, 60))
 	    i += 22.5;
 	}
 	return set;
     }
 
-    var red_spots = spot_rotator(paper.set()).attr({stroke: "red", "stroke-width": 10});
+    var red_spots = spot_rotator(paper.set()).attr({stroke: "red", "stroke-width": 2});
+    var blue_spots = spot_rotator(paper.set()).attr({stroke: "blue", "stroke-width": 1}).rotate(11.25);
 
     // Quadrant lines
-    var xaxis = paper.path("M420 0L420 840").attr({
+    var xaxis = paper.path("M420, 0L420, 840").attr({
 	stroke: "black",
 	"stroke-width": 3
     });
